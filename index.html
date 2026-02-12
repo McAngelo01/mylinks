@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Angelo Pornelosa | My Links</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #0b0d12;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  /* COVER PHOTO */
+  .cover {
+    width: 100%;
+    height: 400px; 
+    /* Eto lang ang binago ko para lumabas ang image mo */
+    background: url('picture/cover.jpg') center/cover no-repeat;
+    background-color: #1a1d23;
+    position: relative;
+  }
+
+  /* Black gradient sa ilalim ng cover para lutang ang text */
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to bottom, transparent, #0b0d12);
+  }
+
+  /* PROFILE SECTION */
+  .profile {
+    text-align: center;
+    margin-top: -180px; 
+    position: relative;
+    z-index: 10;
+  }
+
+  .profile img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 6px solid #0b0d12;
+    object-fit: cover;
+    background: #222;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+  }
+
+  .profile h2 {
+    margin: 15px 0 5px;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 15px rgba(0,0,0,1);
+  }
+
+  .profile p {
+    margin: 0;
+    font-size: 16px;
+    color: #cbd5e0;
+    max-width: 300px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 8px rgba(0,0,0,1);
+  }
+
+  /* CONTAINER */
+  .container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  /* FACEBOOK BUTTON */
+  .link {
+    display: block;
+    padding: 18px;
+    margin-bottom: 25px;
+    border-radius: 50px;
+    background: #1c1f24;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .link:hover {
+    background: #ffffff;
+    color: #000;
+    transform: translateY(-3px);
+  }
+
+  /* SCHEDULE SECTION */
+  .schedule {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .schedule h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00ff88;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* DROPDOWN STYLE */
+  details {
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 8px;
+    padding: 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  details:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  summary {
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Arrow indicator */
+  summary::after {
+    content: '▾';
+    opacity: 0.5;
+  }
+
+  details[open] summary::after {
+    content: '▴';
+  }
+
+  details ul {
+    list-style: none;
+    padding: 10px 0 0 0;
+    margin: 10px 0 0 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  details li {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 13px;
+    opacity: 0.4;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="cover">
+    </div>
+
+  <div class="profile">
+    <img src="picture/profile.jpg" alt="Angelo Pornelosa">
+    <h2>Angelo Pornelosa</h2>
+    <p>Di naman ako ganun ka gwapo tamang update lang</p>
+  </div>
+
+  <div class="container">
+
+    <a class="link" href="https://www.facebook.com/newMCANGELO01" target="_blank">
+      Facebook
+    </a>
+
+    <div class="schedule">
+      <h3>Weekly Schedule</h3>
+
+      <details>
+        <summary>Monday</summary>
+        <ul>
+          <li><span>✨ Institute Class</span> <span>7:00 AM</span></li>
+          <li><span>🍽️ Lunch</span> <span>12:00 PM</span></li>
+          <li><span>🧹 Church Cleaning</span> <span>1:00 PM</span></li>
+          <li><span>🎮 Free Time</span> <span>4:00 PM</span></li>
+          <li><span>🥘 Dinner</span> <span>7:00 PM</span></li>
+          <li><span>😴 Rest</span> <span>10:00 PM</span></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Tuesday</summary>
+        <ul>
+          <li><span>🍳 Breakfast</span> <span>7:00 AM</span></li>
+          <li><span>🧺 Laundry</span> <span>8:00 AM</span></li>
+          <li><span>👨‍🍳 Cooking</span> <span>10:00 AM</span></li>
+          <li><span>🍽️ Lunch</span> <span>11:30 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>1:00 PM</span></li>
+          <li><span>📖 Institute Class</span> <span>5:30 PM</span></li>
+          <li><span>🥘 Dinner</span> <span>8:00 PM</span></li>
+          <li><span>😴 Rest</span> <span>10:00 PM</span></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Wednesday</summary>
+        <ul>
+          <li><span>🍳 Breakfast</span> <span>7:00 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>8:00 AM</span></li>
+          <li><span>👨‍🍳 Cooking</span> <span>10:00 AM</span></li>
+          <li><span>🍽️ Lunch</span> <span>11:30 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>1:00 PM</span></li>
+          <li><span>📖 Institute Class</span> <span>5:30 PM</span></li>
+          <li><span>🥘 Dinner</span> <span>8:00 PM</span></li>
+          <li><span>😴 Rest</span> <span>10:00 PM</span></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Thursday</summary>
+        <ul>
+          <li><span>🍳 Breakfast</span> <span>7:00 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>8:00 AM</span></li>
+          <li><span>👨‍🍳 Cooking</span> <span>10:00 AM</span></li>
+          <li><span>🍽️ Lunch</span> <span>11:30 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>1:00 PM</span></li>
+          <li><span>📖 Institute Class</span> <span>5:30 PM</span></li>
+          <li><span>🥘 Dinner</span> <span>8:00 PM</span></li>
+          <li><span>😴 Rest</span> <span>10:00 PM</span></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Friday</summary>
+        <ul>
+          <li><span>🍳 Breakfast</span> <span>7:00 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>8:00 AM</span></li>
+          <li><span>👨‍🍳 Cooking</span> <span>10:00 AM</span></li>
+          <li><span>🍽️ Lunch</span> <span>11:30 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>1:00 PM</span></li>
+          <li><span>🏀 Activities</span> <span>5:30 PM</span></li>
+          <li><span>🥘 Dinner</span> <span>8:00 PM</span></li>
+          <li><span>😴 Rest</span> <span>10:00 PM</span></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Saturday</summary>
+        <ul>
+          <li><span>🏃 Early Exercise</span> <span>4:00 AM</span></li>
+          <li><span>🍳 Breakfast</span> <span>7:00 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>8:00 AM</span></li>
+          <li><span>👨‍🍳 Cooking</span> <span>10:00 AM</span></li>
+          <li><span>🍽️ Lunch</span> <span>11:30 AM</span></li>
+          <li><span>📖 Institute Class</span> <span>2:00 PM</span></li>
+          <li><span>🎉 Recreational Activities</span> <span>6:00 PM</span></li>
+          <li><span>🥘 Dinner</span> <span>8:00 PM</span></li>
+          <li><span>😴 Rest</span> <span>10:00 PM</span></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Sunday</summary>
+        <ul>
+          <li><span>🍳 Cooking / Breakfast</span> <span>7:00 AM</span></li>
+          <li><span>🎮 Free Time</span> <span>8:00 AM</span></li>
+          <li><span>👔 Sunday Best</span> <span>10:00 AM</span></li>
+          <li><span>🍽️ Lunch</span> <span>12:00 PM</span></li>
+          <li><span>🎮 Free Time</span> <span>1:00 PM</span></li>
+          <li><span>🥘 Dinner</span> <span>8:00 PM</span></li>
+          <li><span>😴 Rest</span> <span>10:00 PM</span></li>
+        </ul>
+      </details>
+
+    </div>
+
+    <footer>
+      © 2026 Angelo Pornelosa
+    </footer>
+
+  </div>
+
+</body>
+</html>
