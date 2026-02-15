@@ -21,13 +21,11 @@
   .cover {
     width: 100%;
     height: 400px; 
-    /* Eto lang ang binago ko para lumabas ang image mo */
     background: url('picture/cover.jpg') center/cover no-repeat;
     background-color: #1a1d23;
     position: relative;
   }
 
-  /* Black gradient sa ilalim ng cover para lutang ang text */
   .cover::after {
     content: '';
     position: absolute;
@@ -70,6 +68,31 @@
     max-width: 300px;
     line-height: 1.4;
     text-shadow: 1px 1px 8px rgba(0,0,0,1);
+  }
+
+  /* DATE AND TIME STYLE */
+  #datetime-container {
+    margin-top: 15px;
+    font-family: monospace;
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 8px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+  }
+
+  #current-time {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+  }
+
+  #current-date {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
   }
 
   /* CONTAINER */
@@ -118,7 +141,6 @@
     letter-spacing: 1px;
   }
 
-  /* DROPDOWN STYLE */
   details {
     background: rgba(255, 255, 255, 0.05);
     margin-bottom: 8px;
@@ -140,7 +162,6 @@
     align-items: center;
   }
 
-  /* Arrow indicator */
   summary::after {
     content: '▾';
     opacity: 0.5;
@@ -165,7 +186,6 @@
     justify-content: space-between;
   }
 
-  /* FOOTER */
   footer {
     text-align: center;
     margin: 40px 0;
@@ -177,17 +197,20 @@
 
 <body>
 
-  <div class="cover">
-    </div>
+  <div class="cover"></div>
 
   <div class="profile">
     <img src="picture/profile.jpg" alt="Angelo Pornelosa">
     <h2>Angelo Pornelosa</h2>
     <p>Di naman ako ganun ka gwapo tamang update lang</p>
+    
+    <div id="datetime-container">
+        <span id="current-time">00:00:00 AM</span>
+        <span id="current-date">Loading date...</span>
+    </div>
   </div>
 
   <div class="container">
-
     <a class="link" href="https://www.facebook.com/newMCANGELO01" target="_blank">
       Facebook
     </a>
@@ -290,14 +313,41 @@
           <li><span>😴 Rest</span> <span>10:00 PM</span></li>
         </ul>
       </details>
-
     </div>
 
     <footer>
       © 2026 Angelo Pornelosa
     </footer>
-
   </div>
 
+  <script>
+    function updateClock() {
+        const now = new Date();
+        
+        // Format ng Oras (HH:MM:SS AM/PM)
+        let hours = now.getHours();
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // ang 0 ay dapat 12
+        
+        const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+        
+        // Format ng Petsa (Month Day, Year)
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = now.toLocaleDateString('en-US', options);
+
+        // Ilagay sa HTML
+        document.getElementById('current-time').textContent = timeString;
+        document.getElementById('current-date').textContent = dateString;
+    }
+
+    // Patakbuhin ang function bawat segundo
+    setInterval(updateClock, 1000);
+    // Tawagin agad para hindi mag-antay ng 1 second sa simula
+    updateClock();
+  </script>
+
 </body>
-</html>
+  </html>
